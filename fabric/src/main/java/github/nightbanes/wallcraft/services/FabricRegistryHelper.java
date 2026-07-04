@@ -31,6 +31,12 @@ public class FabricRegistryHelper implements IRegistryHelper {
             }
 
             @Override
+            @SuppressWarnings("unchecked")
+            public ResourceKey<T> key() {
+                return (ResourceKey<T>) key;
+            }
+
+            @Override
             public T get() {
                 return registered;
             }
@@ -47,6 +53,12 @@ public class FabricRegistryHelper implements IRegistryHelper {
             @Override
             public Identifier id() {
                 return id;
+            }
+
+            @Override
+            @SuppressWarnings("unchecked")
+            public ResourceKey<T> key() {
+                return (ResourceKey<T>) key;
             }
 
             @Override

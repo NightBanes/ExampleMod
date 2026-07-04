@@ -1,6 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "wallcraft:item/example_block"
+    "model": "wallcraft:block/example_block"
   }
 }

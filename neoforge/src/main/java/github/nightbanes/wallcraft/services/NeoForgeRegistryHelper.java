@@ -3,7 +3,9 @@ package github.nightbanes.wallcraft.services;
 import github.nightbanes.wallcraft.Constants;
 import github.nightbanes.wallcraft.services.types.IRegistryHelper;
 import github.nightbanes.wallcraft.services.util.RegistryHandle;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -18,9 +20,7 @@ import java.util.function.Function;
 
 public class NeoForgeRegistryHelper implements IRegistryHelper {
     private static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(Constants.MOD_ID);
-    private static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(Constants.MOD_ID);
-
-
+    public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(Constants.MOD_ID);
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
@@ -38,6 +38,12 @@ public class NeoForgeRegistryHelper implements IRegistryHelper {
             }
 
             @Override
+            @SuppressWarnings("unchecked")
+            public ResourceKey<T> key() {
+                return (ResourceKey<T>) deferredItem.getKey();
+            }
+
+            @Override
             public T get() {
                 return deferredItem.get();
             }
@@ -52,6 +58,12 @@ public class NeoForgeRegistryHelper implements IRegistryHelper {
             @Override
             public Identifier id() {
                 return id;
+            }
+
+            @Override
+            @SuppressWarnings("unchecked")
+            public ResourceKey<T> key() {
+                return (ResourceKey<T>) deferredBlock.getKey();
             }
 
             @Override
