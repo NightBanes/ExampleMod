@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "wallcraft:block/example_block"
+    }
+  }
+}
