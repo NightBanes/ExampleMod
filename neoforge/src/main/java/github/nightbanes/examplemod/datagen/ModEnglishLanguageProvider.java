@@ -2,6 +2,7 @@ package github.nightbanes.examplemod.datagen;
 
 import github.nightbanes.examplemod.Constants;
 import github.nightbanes.examplemod.init.ModBlocks;
+import github.nightbanes.examplemod.init.ModCreativeTabs;
 import github.nightbanes.examplemod.init.ModItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.network.chat.Component;
@@ -15,6 +16,9 @@ public class ModEnglishLanguageProvider extends LanguageProvider {
 
     @Override
     protected void addTranslations() {
+        // Add translations
+        add(ModCreativeTabs.EXAMPLE_TAB.get().getDisplayName(), "Example Mod");
+
         add(ModItems.EXAMPLE_ITEM.get(), "Example Item");
 
         add(ModBlocks.EXAMPLE_BLOCK.block().get(), "Example Block");

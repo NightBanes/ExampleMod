@@ -1,6 +1,7 @@
 package github.nightbanes.examplemod;
 
 import github.nightbanes.examplemod.init.ModBlocks;
+import github.nightbanes.examplemod.init.ModCreativeTabs;
 import github.nightbanes.examplemod.init.ModItems;
 import github.nightbanes.examplemod.services.Services;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -32,5 +33,6 @@ public class CommonClass {
 
         ModItems.load();
         ModBlocks.load();
+        ModCreativeTabs.load();
     }
 }
