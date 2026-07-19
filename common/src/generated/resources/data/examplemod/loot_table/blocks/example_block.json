@@ -10,7 +10,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "examplemod:example_block"
+          "name": "examplemod:example_item"
         }
       ],
       "rolls": 1.0
